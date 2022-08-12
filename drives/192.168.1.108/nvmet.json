@@ -51,7 +51,7 @@
             "path": "/dev/sda4",
             "uuid": "f8af2d06-4d82-4bbc-9af6-cb4b61832ae2"
           },
-          "enable": 0,
+          "enable": 1,
           "nsid": 1
         }
       ],
