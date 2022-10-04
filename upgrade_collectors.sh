@@ -10,7 +10,7 @@ pushd drives
 
 for dr in `ls -d1 */ | cut -d/ -f1 | head -n $max_number_drives`
 do
-	sudo ssh $dr "cd /root/src/c2-tcollector && git pull"
+	sudo ssh $dr "cd /root/src/c2-tcollector && git checkout . && git pull"
 done
 
 popd
