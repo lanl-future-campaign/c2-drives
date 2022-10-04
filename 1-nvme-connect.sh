@@ -14,7 +14,7 @@ sudo nvme disconnect-all
 
 pushd drives
 
-for dr in `ls -d1 */ | cut -d/ -f1`
+for dr in `ls -d1 */ | cut -d/ -f1 | head -n 40`
 do
 	echo $dr
 	sudo nvme connect-all -t tcp -a $dr -s 4420
