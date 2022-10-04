@@ -14,11 +14,7 @@ sudo nvme disconnect-all
 
 pushd drives
 
-for dr in `ls -d1 */ | cut -d/ -f1`
-do
-	echo $dr
-	sudo ssh $dr "/root/nvmetcli/nvmetcli clear && /root/nvmetcli/nvmetcli restore nvmet.json" 
-done
+sudo pdsh -R ssh -w `ls -1 | grep -v txt | sort | head -n 40 | tr '\n' ','` '/root/nvmetcli/nvmetcli clear && /root/nvmetcli/nvmetcli restore nvmet.json && echo OK'
 
 popd
 
