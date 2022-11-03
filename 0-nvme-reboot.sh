@@ -12,9 +12,11 @@ fi
 
 sudo nvme disconnect-all
 
+n=$(cat num_drives)
+
 pushd drives
 
-sudo pdsh -R ssh -w `ls -1 | grep -v txt | sort | head -n 40 | tr '\n' ','` '/root/nvmetcli/nvmetcli clear && /root/nvmetcli/nvmetcli restore nvmet.json && echo OK'
+sudo pdsh -R ssh -w `ls -1 | grep -v txt | sort | head -n $n | tr '\n' ','` '/root/nvmetcli/nvmetcli clear && /root/nvmetcli/nvmetcli restore nvmet.json && echo OK'
 
 popd
 

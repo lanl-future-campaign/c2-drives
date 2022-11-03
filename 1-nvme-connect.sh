@@ -12,9 +12,14 @@ fi
 
 sudo nvme disconnect-all
 
+sudo modprobe nvme_tcp || exit 1
+sudo lsmod | grep nvme
+
+n=$(cat num_drives)
+
 pushd drives
 
-for dr in `ls -d1 */ | cut -d/ -f1 | head -n 40`
+for dr in `ls -d1 */ | cut -d/ -f1 | head -n $n`
 do
 	echo $dr
 	sudo nvme connect-all -t tcp -a $dr -s 4420
