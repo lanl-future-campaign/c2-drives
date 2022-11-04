@@ -1,5 +1,7 @@
 #!/bin/bash -xu
 
+recordsize=${1-'4M'}
+
 curdir=$(cd `dirname $0` && pwd)
 
 cd $curdir || exit 1
