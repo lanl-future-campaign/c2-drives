@@ -1,7 +1,8 @@
 #!/bin/bash -xu
 
 #
-# shutdown and restart the nvme target service running in each kinetic drive
+# shutdown and restart the nvme target service running in each kinetic drive.
+# number of drives can be limited through the "num_drives" file.
 #
 curdir=$(cd `dirname $0` && pwd)
 

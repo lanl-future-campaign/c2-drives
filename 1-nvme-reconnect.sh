@@ -1,5 +1,9 @@
 #!/bin/bash -xu
 
+#
+# disconnect and reconnect to all available kinetic drives. number of drives can
+# be limited through the "num_drives" conf file.
+#
 curdir=$(cd `dirname $0` && pwd)
 
 cd $curdir || exit 1
