@@ -2,7 +2,7 @@
 
 #
 # disconnect and reconnect to all available kinetic drives. number of drives can
-# be limited through the "num_drives" conf file.
+# be limited through the "num_drives" conf file. will be loading the nvme_tcp kernel module.
 #
 curdir=$(cd `dirname $0` && pwd)
 

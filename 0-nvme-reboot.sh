@@ -2,7 +2,7 @@
 
 #
 # shutdown and restart the nvme target service running in each kinetic drive.
-# number of drives can be limited through the "num_drives" file.
+# number of drives can be limited through the "num_drives" file. all currently connected drives will be disconnected.
 #
 curdir=$(cd `dirname $0` && pwd)
 
