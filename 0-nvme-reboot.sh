@@ -1,5 +1,8 @@
 #!/bin/bash -xu
 
+#
+# shutdown and restart the nvme target service running in each kinetic drive
+#
 curdir=$(cd `dirname $0` && pwd)
 
 cd $curdir || exit 1
