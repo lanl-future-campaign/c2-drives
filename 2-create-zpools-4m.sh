@@ -1,5 +1,8 @@
 #!/bin/bash -xu
 
+#
+# create all zpools enabled. will be loading the zfs kernel module
+#
 recordsize=${1-'4M'}
 
 curdir=$(cd `dirname $0` && pwd)
@@ -22,7 +25,7 @@ pushd zpools
 for pl in `ls -d1 */ | cut -d/ -f1`
 do
 	pushd $pl
-	sudo zpool create -f -O recordsize=4M $pl `cat type` `cat drives`
+	sudo zpool create -f -O recordsize=$recordsize $pl `cat type` `cat drives`
 	popd
 done
 
