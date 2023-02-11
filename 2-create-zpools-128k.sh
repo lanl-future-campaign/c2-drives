@@ -5,6 +5,6 @@
 #
 curdir=$(cd `dirname $0` && pwd)
 
-$curdir/2-create-zpools-4m.sh 128K
+$curdir/2-create-zpools-16m.sh 128K
 
 exit 0
