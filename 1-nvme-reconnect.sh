@@ -14,6 +14,8 @@ then
 	exit 0
 fi
 
+sudo umount /mnt ### /mnt may be using a nvmeof drive
+
 sudo nvme disconnect-all
 
 sudo modprobe nvme_tcp || exit 1
